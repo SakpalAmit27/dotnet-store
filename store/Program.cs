@@ -15,4 +15,9 @@ List<StoreDto> store = [
 
 ];
 
+
+// this is a minimal api // 
+app.MapGet("store", () => store);
+
+
 app.Run();
