@@ -2,4 +2,4 @@
 GET http://localhost:5139
 
 ###
-GET http://localhost:5139/store/10
+GET http://localhost:5139/flagstore/10

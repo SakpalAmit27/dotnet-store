@@ -16,10 +16,27 @@ List<StoreDto> store = [
 
 
 // this is a minimal api // 
-app.MapGet("store", () => store);
+app.MapGet("flagstore", () => store);
 
 // GET // store // 1
 
-app.MapGet("store/{id}", (int id) => store.Find(store => store.Id == id));
+app.MapGet("flagstore/{id}", (int id) => store.Find(store => store.Id == id)).WithName("getFlag");
 
+// post (put) // 
+
+app.MapPost("flagstore",(CreateStoreDto newFlag) => {
+
+    StoreDto flag = new(
+        store.Count + 1,
+        newFlag.Name,
+        newFlag.Genre,
+        newFlag.Streams,
+        newFlag.Artist,
+        newFlag.ReleaseDate);
+
+        store.Add(flag);
+
+        return Results.CreatedAtRoute($"getFlag",new {id = flag.Id}, flag);
+});
 app.Run();
+  
