@@ -1,4 +1,5 @@
 
 GET http://localhost:5139
 
-GET http://localhost:5139/store
+###
+GET http://localhost:5139/store/10

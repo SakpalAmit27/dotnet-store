@@ -1,9 +1,8 @@
+using System.Net.Sockets;
 using store.Dtos;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
-
-app.MapGet("/", () => "Hello World!");
 
 List<StoreDto> store = [
 
@@ -19,5 +18,8 @@ List<StoreDto> store = [
 // this is a minimal api // 
 app.MapGet("store", () => store);
 
+// GET // store // 1
+
+app.MapGet("store/{id}", (int id) => store.Find(store => store.Id == id));
 
 app.Run();
