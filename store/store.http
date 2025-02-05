@@ -5,13 +5,18 @@ GET http://localhost:5139
 GET http://localhost:5139/flagstore/10
 
 ###
+
+# this is the new location // 
+GET http://localhost:5139/flagstore/6 
+
+###
 POST http://localhost:5139/flagstore/
 Content-Type:application/json
 
 {
   "albumName": "Iowa",
   "genre": "Metal",
-  "streams": 10M,
+  "streams": 10.2,
   "artist": "Slipknot",
   "releaseDate": "2001-07-28"
 }
