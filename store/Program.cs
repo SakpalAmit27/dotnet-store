@@ -4,6 +4,9 @@ using store.Dtos;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+        // providing the id to the flagstore , which 
+const string GetFlagEndpointName = "getFlag";
+
 List<StoreDto> store = [
 
      new StoreDto(1, "Master of Puppets", "Thrash Metal",7.5M, "Metallica", new DateOnly(1986, 7, 1)),
@@ -20,23 +23,26 @@ app.MapGet("flagstore", () => store);
 
 // GET // store // 1
 
-app.MapGet("flagstore/{id}", (int id) => store.Find(store => store.Id == id)).WithName("getFlag");
+app.MapGet("flagstore/{id}", (int id) => store.Find(store => store.Id == id)).WithName(GetFlagEndpointName);
 
 // post (put) // 
 
 app.MapPost("flagstore",(CreateStoreDto newFlag) => {
 
     StoreDto flag = new(
-        store.Count + 1,
+        store.Count + 1, // increments the space here to add newFlags // 
         newFlag.Name,
         newFlag.Genre,
         newFlag.Streams,
         newFlag.Artist,
         newFlag.ReleaseDate);
 
-        store.Add(flag);
+        store.Add(flag); // adds the new flag // 
 
-        return Results.CreatedAtRoute($"getFlag",new {id = flag.Id}, flag);
+
+        // providing the id to the flagstore , which consits of withName .// 
+        return Results.CreatedAtRoute(GetFlagEndpointName, new {id = flag.Id} , flag);
+
 });
 app.Run();
   
