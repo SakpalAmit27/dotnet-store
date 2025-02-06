@@ -1,4 +1,5 @@
 using System.Net.Sockets;
+using store;
 using store.Dtos;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,5 +45,14 @@ app.MapPost("flagstore",(CreateStoreDto newFlag) => {
         return Results.CreatedAtRoute(GetFlagEndpointName, new {id = flag.Id} , flag);
 
 });
+
+
+// PUT REQUEST'S // 
+
+app.MapPut("flagstore/{id}", (int id, UpdateStoreDto updatedStoreDto) =>
+ {
+    
+});
+
 app.Run();
   
