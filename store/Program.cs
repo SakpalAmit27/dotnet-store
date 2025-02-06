@@ -25,7 +25,7 @@ app.MapGet("flagstore", () => store);
 
 app.MapGet("flagstore/{id}", (int id) => store.Find(store => store.Id == id)).WithName(GetFlagEndpointName);
 
-// post (put) // 
+// post (put) create  // 
 
 app.MapPost("flagstore",(CreateStoreDto newFlag) => {
 
