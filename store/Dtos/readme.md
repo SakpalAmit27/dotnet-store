@@ -25,4 +25,21 @@ public record class StoreDto(int Id,
 }
 
 first dto created , concludes first schema // 
+
+
+// second schema Dto's Model / 
+
+namespace store.Dtos;
+
+public record class CreateStoreDto(
+    String Name,
+    String Genre,
+    decimal Streams,
+    string Artist,
+    DateOnly ReleaseDate
+)
+{
+
+}
+
   
