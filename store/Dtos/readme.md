@@ -42,4 +42,28 @@ public record class CreateStoreDto(
 
 }
 
-  
+
+// added the GET AND POST REQUEST'S // 
+
+
+app.MapGet("flagstore/{id}", (int id) => store.Find(store => store.Id == id)).WithName(GetFlagEndpointName);
+
+// post (put) create  // 
+
+app.MapPost("flagstore",(CreateStoreDto newFlag) => {
+
+    StoreDto flag = new(
+        store.Count + 1, // increments the space here to add newFlags // 
+        newFlag.Name,
+        newFlag.Genre,
+        newFlag.Streams,
+        newFlag.Artist,
+        newFlag.ReleaseDate);
+
+        store.Add(flag); // adds the new flag // 
+
+
+        // providing the id to the flagstore , which consits of withName .// 
+        return Results.CreatedAtRoute(GetFlagEndpointName, new {id = flag.Id} , flag);
+
+});
