@@ -10,4 +10,19 @@ app.MapPut("flagstore/{id}", (int id, UpdateStoreDto updatedStoreDto) =>
 });
 
 app.Run();
+
+// prewritten steps // 
+
+namespace store.Dtos;
+
+public record class StoreDto(int Id,
+  string AlbumName, 
+  string Genre,
+  decimal Streams, 
+  string Artist,
+  DateOnly ReleaseDate){
+
+}
+
+first dto created , concludes first schema // 
   
