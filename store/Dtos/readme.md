@@ -67,3 +67,11 @@ app.MapPost("flagstore",(CreateStoreDto newFlag) => {
         return Results.CreatedAtRoute(GetFlagEndpointName, new {id = flag.Id} , flag);
 
 });
+
+
+
+10/2/25
+
+have to implement update store dto's
+
+go through to the commit history once again // 
