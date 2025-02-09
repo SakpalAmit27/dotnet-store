@@ -75,3 +75,8 @@ app.MapPost("flagstore",(CreateStoreDto newFlag) => {
 have to implement update store dto's
 
 go through to the commit history once again // 
+
+/// ---------------- /// 
+
+implement complete PUT request's , include some readme's for the steps so far takin /
+
