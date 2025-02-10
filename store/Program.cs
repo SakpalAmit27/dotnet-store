@@ -57,8 +57,14 @@ app.MapPut("flagstore/{id}", (int id, UpdateStoreDto updatedStoreDto) =>
     // creating new store at this index // 
 
     store[index] = new StoreDto(
+        id,
+        updatedStoreDto.Name,
+        updatedStoreDto.Genre,
+        updatedStoreDto.Streams, 
+        updatedStoreDto.Artist,
+        updatedStoreDto.ReleaseDate
 
-    )
+    );
 
 
 });
