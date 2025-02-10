@@ -49,9 +49,18 @@ app.MapPost("flagstore",(CreateStoreDto newFlag) => {
 
 // PUT REQUEST'S // 
 
-app.MapPut("flagstore/{id}", (int id, UpdateStoreDto updatedStoreDto) =>
- {
-    
+app.MapPut("flagstore/{id}", (int id, UpdateStoreDto updatedStoreDto) => 
+{
+    // finding the store index , so we can replace with the existing one's// 
+    var index = store.FindIndex(store => store.Id == id); 
+
+    // creating new store at this index // 
+
+    store[index] = new StoreDto(
+
+    )
+
+
 });
 
 app.Run();
