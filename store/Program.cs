@@ -66,7 +66,7 @@ app.MapPut("flagstore/{id}", (int id, UpdateStoreDto updatedStoreDto) =>
 
     );
 
-
+    return Results.NoContent(); 
 });
 
 app.Run();

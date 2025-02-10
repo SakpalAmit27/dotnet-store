@@ -20,3 +20,15 @@ Content-Type:application/json
   "artist": "Slipknot",
   "releaseDate": "2001-07-28"
 }
+
+###
+PUT http://localhost:5139/flagstore/6
+Content-Type: application/json
+
+{
+  "albumName": "Iowa",
+  "genre": "Metal , NU Metal",
+  "streams": 15.2,
+  "artist": "Slipknot",
+  "releaseDate": "2001-07-28"
+}
