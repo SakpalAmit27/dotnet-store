@@ -81,3 +81,11 @@ go through to the commit history once again //
 implement complete PUT request's , include some readme's for the steps so far takin /
 
 implemented the PUT request's , however the DEL is pending 
+
+filled in the Dto record class as per the model restrictions 
+along with 
+added  
+
+return Results.NoContent(); 
+
+for debugging and status error handling 
