@@ -80,3 +80,4 @@ go through to the commit history once again //
 
 implement complete PUT request's , include some readme's for the steps so far takin /
 
+implemented the PUT request's , however the DEL is pending 
