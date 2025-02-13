@@ -91,3 +91,6 @@ return Results.NoContent();
 for debugging and status error handling 
 
 // preparing for delete request's // 
+
+
+so far POST , PUT are performed well 
